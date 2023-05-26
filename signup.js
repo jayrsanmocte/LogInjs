@@ -90,11 +90,11 @@ Middlename.onkeyup = (e) => {
 
 
   Email.onkeyup = (e) => {
-    if (e.target.value.length < 3) {
+    if (e.target.value.indexOf("@") === -1)  {
       Email.style.border = "1px solid red";
       Email.nextElementSibling.classList.remove("d-none");
       Email.nextElementSibling.innerHTML =
-      "Please field in all required field";
+      "Please enter a valid email address";
       validated.Email = false;
     } else {
       Email.style.border = "1px solid rgb(234, 231, 231)";
