@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container-flex">
+      <div class="card">
+        <h1>Login</h1>
+        <hr />
+        <form action="/login.html" method="get" id="loginForm" class="w-100">
+          <input type="text" name="username" id="userName" class="custom-input" placeholder="Username" />
+                <span class="error-message d-none"></span>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="custom-input"
+            placeholder="Password"
+          />
+          <span class="error-message d-none"></span>
+          <br />
+          <button
+            type="submit"
+            id="btnSubmit"
+            class="custom-button-submit"
+            disabled="true"
+          >
+            Submit
+          </button>
+          <br><br><br><a href ="signup.html">Sign up Here</a>
+
+          <br />
+        </form>
+        
+      </div>
+    </div>
+
+    <script src="validate.js"></script>
+  </body>
+</html>
