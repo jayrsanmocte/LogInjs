@@ -1,5 +1,5 @@
 body {
-  background-color: #f2efef;
+  background-color: #978e8e;
 }
 
 .container-flex {
@@ -45,6 +45,7 @@ input {
 
 .custom-button-submit:disabled {
   background-color: #a6aab3;
+  cursor: no-drop;
 }
 
 .w-100 {
@@ -53,11 +54,13 @@ input {
 
 .error-input {
   border: 1px solid red;
+  
 }
 
 .error-message {
   font-size: 10px;
   color: red;
+ 
 }
 
 .d-none {
@@ -71,7 +74,8 @@ input {
   width: 500px;
   height: auto;
   padding: 40px;
-  background-color: white;
+  background-color: rgb(168, 168, 162);
+  display: flex;
 }
 
 h1 {
@@ -119,5 +123,11 @@ h1 {
     height: 30px;
     border: 1px solid rgb(234, 231, 231);
     line-height: 1.5;
-    padding: 5px;
+    padding: 10px;
+    
+  
+  }
+
+  #contain99 {
+    background-color: rgb(209, 187, 187);
   }

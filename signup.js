@@ -13,6 +13,7 @@ let validated = {
   userName: false,
   password: false,
 };
+let userValue = [];
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -22,17 +23,19 @@ form.addEventListener("submit", function (e) {
 });
 
 userName.onkeyup = (e) => {
-  if (e.target.value.length <3) {
+  if (e.target.value.length < 3) {
     userName.style.border = "1px solid red";
     userName.nextElementSibling.classList.remove("d-none");
     userName.nextElementSibling.innerHTML =
     "Please field in all required field";
+    
     validated.userName = false;
   } else {
     userName.style.border = "1px solid rgb(234, 231, 231)";
     userName.nextElementSibling.classList.add("d-none");
     userName.nextElementSibling.innerHTML = "";
     validated.userName = true;
+    userValue.push(userName.value)
   }
 
   checkValidation();
@@ -50,6 +53,7 @@ password.onkeyup = (e) => {
     password.nextElementSibling.classList.add("d-none");
     password.nextElementSibling.innerHTML = "";
     validated.password = true;
+    userValue.push(password.value)
   }
 
   checkValidation();
@@ -196,3 +200,24 @@ function checkValidation() {
     document.querySelector("#btnSubmit").setAttribute("disabled", true);
   }
 }
+
+
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict';
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation');
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms).forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      if (!form.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    }, false);
+  });
+})();
